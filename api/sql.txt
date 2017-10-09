@@ -1,0 +1,2 @@
+SELECT user.DevId , MAX(user.LTIME), parent.LongLat, parent.RSSI, MAX(user.LogId) as LogId FROM BeaconAlerts as user,BeaconAlerts as parent WHERE 
+LogId = parent.LogId AND user.UUID = "e2c56db5-dffb-48d2-b060-d0f5a7105002" AND user.LDate = "2017-06-21" GROUP BY user.DevId,parent.LongLat, parent.RSSI order by user.DevId DESC ;
